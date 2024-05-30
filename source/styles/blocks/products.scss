@@ -1,0 +1,54 @@
+.products {
+  border-top: 1px solid $fourth-bg-color;
+
+  @media (min-width: $breakpoint-tablet) {
+    border: 0;
+  }
+
+  &__wrapper {
+    padding: 27px 0 0;
+
+    @media (min-width: $breakpoint-tablet) {
+      padding: 65px 30px 0;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      padding: 74px 0 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 41px;
+    margin-left: 20px;
+    font-family: $secondary-font;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    color: $primary-title-color;
+    text-align: left;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 84px;
+      margin-left: 0;
+      font-size: 60px;
+      line-height: 60px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      margin-bottom: 84px;
+    }
+  }
+
+  &__list {
+    @media (min-width: $breakpoint-tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 63px 80px;
+    }
+  }
+}

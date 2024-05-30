@@ -1,0 +1,184 @@
+.how-it-works {
+  &__wrapper {
+    padding-top: 18px;
+    padding-bottom: 49px;
+
+    @media (min-width: $breakpoint-tablet) {
+      padding-top: 45px;
+      padding-bottom: 47px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      padding-top: 71px;
+      padding-bottom: 69px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-family: $secondary-font;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 40px;
+    color: $primary-title-color;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 32px;
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 20px;
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr 1fr;
+      gap: 37px 60px;
+      counter-reset: how-it-works-list 0;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      display: flex;
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  &__text {
+    font-family: $primary-font;
+    font-size: 14px;
+    line-height: 18px;
+
+    @media (min-width: $breakpoint-tablet) {
+      align-self: start;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.how-it-works__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 20px;
+  align-items: center;
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: none;
+    grid-template-rows: 120px 1fr;
+    align-items: end;
+    gap: 31px;
+    min-height: 280px;
+  }
+
+  &::before {
+    @include pseudo-element(60px, 60px, auto, auto, static);
+    background-color: $primary-bg-color;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &::after {
+    @media (min-width: $breakpoint-tablet) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      counter-increment: how-it-works-list;
+      content: counter(how-it-works-list);
+      font-size: 280px;
+      line-height: 280px;
+      font-family: $secondary-font;
+      font-weight: 400;
+      color: $secondary-bg-color;
+      z-index: -1;
+    }
+  }
+}
+
+.how-it-works__item--first {
+  &::before {
+    background-image: url("../../icons/stack.svg#icon_leaf");
+    background-size: 30px 32px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 225px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-right: 25px;
+  }
+}
+
+.how-it-works__item--second {
+  &::before {
+    background-image: url("../../icons/stack.svg#icon_water");
+    background-size: 26px 28px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 250px;
+
+    &::after {
+      right: 5px;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.how-it-works__item--third {
+  &::before {
+    background-image: url("../../icons/stack.svg#icon_eat");
+    background-size: 25px 30px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 247px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 250px;
+  }
+}
+
+.how-it-works__item--fourth {
+  &::before {
+    background-image: url("../../icons/stack.svg#icon_clock");
+    background-size: 26px 31px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 245px;
+
+    &::after {
+      right: -5px;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.how-it-works__item--fourth br {
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block;
+  }
+}
